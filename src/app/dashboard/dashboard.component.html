@@ -1,0 +1,10 @@
+<app-vote-search></app-vote-search>
+<h3>热度排行</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let vote of votes" class="col-1-4" routerLink="/detail/{{vote.id}}">
+    <div class="module vote">
+      <h4>{{vote.name}}</h4>
+    </div>
+  </a>
+</div>
+<div echarts [options]="options" style="height: 400px;width:100%;"></div>

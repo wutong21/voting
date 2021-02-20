@@ -1,0 +1,18 @@
+<h2>My Votes</h2>
+<label>Vote name:
+    <input #voteName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(voteName.value); voteName.value=''">
+    add
+  </button>
+<ul class="votes">
+  <li *ngFor="let vote of votes">
+    <a routerLink="/detail/{{vote.id}}">
+        <span class="badge">{{vote.id}}</span> {{vote.name}}
+      </a>
+    <button class="delete" title="delete vote"
+      (click)="delete(vote)">x</button>
+  </li>
+</ul>
+<!-- <app-vote-detail [vote]="selectedVote"></app-vote-detail> -->
